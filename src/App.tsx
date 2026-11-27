@@ -1,9 +1,7 @@
+import FretboardExplorer from './pages/FretboardExplorer'
+
 function App() {
-  return (
-    <main>
-      <h1>StringTheory</h1>
-    </main>
-  )
+    return <FretboardExplorer />;
 }
 
-export default App
+export default App;
