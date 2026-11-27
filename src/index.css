@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121214;
+    color: #f4f4f5;
+    font-family: Arial, sans-serif;
+}
+
+.explorer {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.explorer h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.explorer p {
+    color: #a1a1aa;
+    font-size: 14px;
+    margin-bottom: 32px;
+}

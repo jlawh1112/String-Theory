@@ -1,0 +1,51 @@
+.fretboard-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.fretboard {
+    display: block;
+    width: 100%;
+    min-width: 800px;
+}
+
+.fretboard-surface {
+    fill: #242428;
+}
+
+.fret {
+    stroke: #626269;
+    stroke-width: 1.5;
+}
+
+.nut {
+    stroke: #d4d4d8;
+    stroke-width: 4;
+}
+
+.guitar-string {
+    stroke: #a1a1aa;
+}
+
+.fret-label,
+.string-label {
+    fill: #a1a1aa;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+
+.fret-marker {
+    fill: #71717a;
+}
+.fretboard-container {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #45454d #18181b;
+}
+
+.fretboard {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
