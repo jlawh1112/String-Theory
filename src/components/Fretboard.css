@@ -1,13 +1,17 @@
 .fretboard-container {
     width: 100%;
     overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #45454d #18181b;
 }
 
 .fretboard {
     display: block;
     width: 100%;
-    min-width: 800px;
+    min-width: 0;
 }
+
+/* Fretboard structure */
 
 .fretboard-surface {
     fill: #242428;
@@ -37,15 +41,27 @@
 .fret-marker {
     fill: #71717a;
 }
-.fretboard-container {
-    width: 100%;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #45454d #18181b;
+
+/* Note highlighting */
+
+.note-circle {
+    fill: #45454e;
+    stroke: #71717a;
+    stroke-width: 1;
 }
 
-.fretboard {
-    display: block;
-    width: 100%;
-    min-width: 0;
+.root-note {
+    fill: #bbef87;
+    stroke: #bbef87;
+}
+
+.note-label {
+    fill: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.root-label {
+    fill: #18220d;
 }
