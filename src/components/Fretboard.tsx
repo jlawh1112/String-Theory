@@ -1,13 +1,23 @@
 import './Fretboard.css'
+import { getNoteAtFret } from '../core/notes';
 
 interface FretboardProps {
     fretCount?: number;
     tuning?: string[];
+    highlightedNotes?: readonly string[];
+    rootNote?: string;
+    position?: {
+    start: number;
+    end: number;
+};
 }
 
 function Fretboard({
     fretCount = 24,
-    tuning = ['E', 'B', 'G', 'D', 'A', 'E']
+    tuning = ['E', 'B', 'G', 'D', 'A', 'E'],
+    highlightedNotes = [],
+    rootNote = 'E',
+    position
 }: FretboardProps) {
 
     const fretWidth = 48;
@@ -111,6 +121,59 @@ function Fretboard({
                         </text>
                     </g>
                 ))}
+                {/* Highlighted notes */}
+                {tuning.map((openNote, stringIndex) =>
+                    frets.map(fret => {
+                        const note = getNoteAtFret(openNote, fret);
+
+                        if (!highlightedNotes.includes(note)) {
+                            return null;
+                        }
+                        if (
+                            position &&
+                            (fret < position.start || fret > position.end)
+                        ) {
+                            return null;
+                        }
+
+                        const x = fret === 0
+                            ? padding - 20
+                            : padding + (fret - 0.5) * fretWidth;
+
+                        const y = padding + stringIndex * stringSpacing;
+
+                        const isRoot = note === rootNote;
+
+                        return (
+                            <g key={`${stringIndex}-${fret}`}>
+                                <circle
+                                    cx={x}
+                                    cy={y}
+                                    r={12}
+                                    className={
+                                        isRoot
+                                            ? 'note-circle root-note'
+                                            : 'note-circle'
+                                    }
+                                />
+
+                                <text
+                                    x={x}
+                                    y={y}
+                                    textAnchor="middle"
+                                    dominantBaseline="middle"
+                                    className={
+                                        isRoot
+                                            ? 'note-label root-label'
+                                            : 'note-label'
+                                    }
+                                >
+                                    {note}
+                                </text>
+                            </g>
+                        );
+                    })
+                )}
             </svg>
         </div>
     );
