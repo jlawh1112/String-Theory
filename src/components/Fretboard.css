@@ -3,6 +3,7 @@
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: #45454d #18181b;
+    margin-bottom: 24px;
 }
 
 .fretboard {
